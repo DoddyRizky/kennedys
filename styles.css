@@ -77,57 +77,76 @@ header nav a:hover {
 
 
     .hero {
-      display:flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      padding: 2rem;
-      padding: 20px;
-      background-image: url('images/bgg.webp'); /* Ganti dengan gambar kamu */
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-      color: yellow;
-      
-    }
-
-    .hero img {
-      max-width: 50%;
-      height: auto;
-      margin-top: 10px;
-  
-      
-    }
-
-    .hero-text {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background-image: url('images/bgg.webp');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  color: #fff;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.0);
+}
+
+.hero-text {
+  max-width: 90%;
 }
 
 .hero-text p {
   font-size: 1.2rem;
   margin-bottom: 1rem;
-  color: #fdfdfd;
-  
+  color: #fff;
 }
 
 .hero-text button {
-  padding: 0.5rem 1.5rem;
+  padding: 0.75rem 2rem;
   font-size: 1rem;
   background-color: white;
   color: black;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  transition:0.3s ease;
-  font-weight: bolder;
+  transition: 0.3s ease;
+  font-weight: bold;
 }
 
 .hero-text button:hover {
   background-color: red;
+  color: white;
 }
+
+/* RESPONSIVE LAYOUT */
+@media (max-width: 768px) {
+  .hero {
+    padding: 1.5rem;
+    background-position: top;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .hero-text button {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.5rem;
+  }
+
+  .hero-image {
+    max-width: 90%;
+  }
+}
+
 
 
 
@@ -231,26 +250,63 @@ header nav a:hover {
 }
 
 
-    .section {
-      padding: 15px 15px 15px;
-      text-align: center;
-      align-items: center;
-      background-image: url('images/bgg.webp');
-    }
+    /* Umum untuk semua section */
+.section {
+  padding: 2rem 1rem;
+  text-align: center;
+  background-image: url('images/bgg1.webp');
+  background-color: rgba(0, 0, 0, 0.7); /* sedikit transparan */
+  background-size: cover;
+  background-position: center;
+}
 
-    .section h2 {
-      color: white;
-      background-color: black;
-      
-    }
+/* Heading utama section */
+.section h2 {
+  color: #fff;
+  background-color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
 
-    .about-section h2 {
-      color: black;
-    }
+/* Bagian about-section khusus */
+.about-section {
+  padding: 2rem 1rem;
+  background-color: #f9f9f9; /* kontras dengan .section */
+  text-align: center;
+}
 
-    .about-section p {
-      color: #222;
-    }
+.about-section h2 {
+  color: #111;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.about-section p {
+  color: #333;
+  font-size: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .section, .about-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .section h2,
+  .about-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-section p {
+    font-size: 0.95rem;
+  }
+}
+
 
     
 
@@ -347,7 +403,7 @@ header nav a:hover {
     @media (max-width: 600px) {
       .menu-item {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
       }
 
       .menu-item img {
