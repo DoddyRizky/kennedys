@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kennedys Burger</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+  <a class="navbar-brand" href="index.html">
+    <img src="images/logokennedys.webp"Logo" width="55" height="55">
+    Kennedys BurgerBar
+</a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="aboutus.html">About Us</a>
+  </nav>
+</header>
+
+<body>
+  <main>
+<div class="team-container">
+  <div class="menu-item">
+    <img src="images/braindamage.webp" alt="Brain Damage">
+    <div class="menu-details">
+      <h3>Brain Damage</h3>
+      <p>Burger dengan lapisan beef patty, mayonaise,keju, acar.</p>
+      <p>Rp 45.000</p>
+      <label>Qty: <input type="number" id="qty-1" value="1" min="1"></label>
+      <button class="add-button" onclick="addToCart('Brain Damage', 45000, 'qty-1')">Pesan</button>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="images/doubelpunch.webp" alt="Double Punch">
+    <div class="menu-details">
+      <h3>Double Punch</h3>
+      <p>Burger dengan lapisan double beef sebagai patty, mayonaise,double keju, acar.</p>
+      <p>Rp 60.000</p>
+      <label>Qty: <input type="number" id="qty-2" value="1" min="1"></label>
+      <button class="add-button" onclick="addToCart('Double Punch', 60000, 'qty-2')">Pesan</button>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="images/kungpowchicken.webp" alt="Kungpow Chicken">
+    <div class="menu-details">
+      <h3>kungpowchicken</h3>
+      <p>Burger dengan lapisan daging ayam fillet cryspy sebagai patty, mayonaise, acar.</p>
+      <p>Rp 35.000</p>
+      <label>Qty: <input type="number" id="qty-3" value="1" min="1"></label>
+      <button class="add-button" onclick="addToCart('chicken Dinner', 35000, 'qty-3')">Pesan</button>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="images/chickendinner.webp" alt="Chicken Dinner">
+    <div class="menu-details">
+      <h3>Chicken Dinner</h3>
+      <p>Burger dengan lapisan daging ayam fillet cryspy double sebagai patty, mayonaise, acar.</p>
+      <p>Rp 60.000</p>
+      <label>Qty: <input type="number" id="qty-4" value="1" min="1"></label>
+      <button class="add-button" onclick="addToCart('Chili Burger', 60000, 'qty-3')">Pesan</button>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="images/heineken.webp" alt="Heineken Beer">
+    <div class="menu-details">
+      <h3>Heineken Beer</h3>
+      <p>Beer Heineken dingin.</p>
+      <p>Rp 35.000</p>
+      <label>Qty: <input type="number" id="qty-5" value="1" min="1"></label>
+      <button class="add-button" onclick="addToCart('Heineken Beer', 35000, 'qty-3')">Pesan</button>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <img src="images/corona.webp" alt="Corona Beer">
+    <div class="menu-details">
+      <h3>Corona Beer</h3>
+      <p>Beer Corona Dingin.</p>
+      <p>Rp 35.000</p>
+      <label>Qty: <input type="number" id="qty-6" value="1" min="1"></label>
+      <button class="add-button" onclick="addToCart('Corona Beer', 35000, 'qty-3')">Pesan</button>
+    </div>
+  </div>
+
+
+  <!-- INPUT CUSTOMER -->
+  <div class="customer-info">
+    
+  </div>
+
+  <!-- KERANJANG -->
+  <div class="cart">
+    <h2>Keranjang Anda</h2>
+    <ul id="cart-list"></ul>
+    <br>
+    <label>
+      Nama Customer:
+      <input type="text" id="customer-name" placeholder="Masukkan nama">
+    </label>
+    <br>
+    <br>
+    <p><strong>Total: </strong>Rp <span id="cart-total">0</span></p>
+    <br>
+    <p><strong>Jumlah Item: </strong><span id="item-count">0</span></p>
+    <br>
+    <br>
+    <button class="add-button" onclick="clearCart()">Hapus Semua Pesanan</button>
+    <br>
+    <br>
+    <button class="order-button" onclick="checkout()">Pembayaran via QRIS</button>
+    <br>
+    <br>
+    <ol>
+    <p>📱 Silakan scan QRIS untuk membayar:</p></ol>
+    <img src="images/qriskennedys.webp" alt="QRIS" width="200">
+    <br>
+    <br>
+    <button class="add-button" id="btn-paid" onclick="showReceipt()">✅ Saya Sudah Bayar</button>
+  </div>
+
+
+  <!-- STRUK TERSEMBUNYI -->
+  <div id="receipt" style="display:none; font-family: Arial; padding: 20px;">
+    <h3>🧾 Struk Pembayaran</h3>
+    <p id="receipt-time"></p>
+    <p id="receipt-antrian"></p>
+    <p id="receipt-customer"></p>
+    <ul id="receipt-items"></ul>
+    <p><strong>Total Item: </strong><span id="receipt-total-item"></span></p>
+    <p><strong>Total Bayar: </strong>Rp <span id="receipt-total-harga"></span></p>
+  </div>
+  </main>
+
+
+  <footer>
+  <p>©2025 Kennedys Burgerbar | <a href="https://github.com/DoddyRizky">Github</a> |</p>
+</footer>
+
+  <!-- SCRIPT -->
+  <script src="java.js"></script>
+
+</body>
+</html>
