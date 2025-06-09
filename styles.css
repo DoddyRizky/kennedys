@@ -311,37 +311,61 @@ header nav a:hover {
     
 
     .menu-item {
-      display:flex;
-      align-items:center;
-      gap:2rem;
-      padding:1.5rem;
-      background: white;
-      margin: 10px 0;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: white;
+  margin: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap; /* Supaya konten bisa turun saat layar sempit */
+}
 
-    .menu-item img {
-      width: 160px;
-      height: auto;
-      max-width: 100%;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-right: 15px;
-    }
+.menu-item img {
+  width: 150px;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0; /* Biar gambar nggak ketekan */
+}
 
-    .menu-details {
-      flex-grow: 1;
-    }
+.menu-details {
+  flex: 1;
+  min-width: 200px;
+}
 
-    .menu-item h3 {
-      margin: 0 0 5px;
-    }
+.menu-item h3 {
+  margin: 0 0 5px;
+  font-size: 1.25rem;
+}
 
-    .menu-item p {
-      margin: 0 0 10px;
-    }
+.menu-item p {
+  margin: 0 0 10px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
 
+/* Tambahan untuk responsif di layar kecil */
+@media (max-width: 600px) {
+  .menu-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .menu-item img {
+    margin: 0 0 10px;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .menu-details {
+    width: 100%;
+  }
+}
     .add-button {
       padding: 8px 12px;
       background-color: black;
